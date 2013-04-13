@@ -1,0 +1,43 @@
+/* CSS Document */
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;border:0;}
+ul,ol,li{list-style:none;}
+input,button{margin:0;font-size:12px;vertical-align:middle;}
+body{font-size:12px;font-family:Arial, Helvetica, sans-serif; color:#333; margin:0 auto; }
+table{border-collapse:collapse;border-spacing:0;}
+
+a{color:#333;text-decoration:none;}
+a:hover{color:#c00; text-decoration:underline;}
+em,i{ font-style:normal;}
+b{ font-weight:normal;}
+h1,h2,h3,h4{ font-size:14px;}
+h5{ font-size:12px;}
+h6{ font-size:12px; font-weight:normal;}
+
+.box-163css{ width:520px; padding:10px; height:550px; margin:20px auto; position:relative; z-index:100; overflow:hidden; border:1px solid #ccc;}
+a.close {display: block;width: 20px;height: 21px; cursor:pointer;}
+
+.photo_slider_img {
+	width: 490px;
+	height: 490px;
+	margin-bottom: 5px;
+	overflow: hidden;
+}
+.photo_slider {
+	position: relative;
+	width: 490px;
+	height: 520px;
+	overflow: hidden;
+	float: left;
+}
+.qqpic{ cursor:pointer;}
+.info_area {display:none; position:absolute; left:450px; top:420px;}
+.info_area a{ background:#c00;}
+
+.more_info {
+	display: block;
+	width: 89px;
+	height: 26px;
+	cursor: pointer;
+	position:absolute; left:0; bottom:0;
+	z-index:10000;
+}

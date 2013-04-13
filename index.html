@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Revealing Photo Slider with jQuery by CSS-Tricks-www.co de fans.net</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<body>
+   <div id="mouse">
+    </div>
+   <div id="divoffset" >
+   </div>
+	<div class="box-163css">
+		<div class="photo_slider">
+			<img class="qqpic" src="images/img01.jpg" width="490px" height="520px"  id="imgEnlarge" style="position:relative;"/>
+		</div>
+	</div>
+<script type="text/javascript">
+	<!--
+     $(function(){
+	        	  var theImage = new Image();
+		          theImage.src = $( "#imgEnlarge").attr( "src");
+				  //theImage.width = 1000;theImage.height = 1000;
+				  var iniSize = [$( "#imgEnlarge").width(),$( "#imgEnlarge").height()];
+				  var dateDelay = 0;
+				  $(document).mousemove(function(e){
+				        var offset =  $(".photo_slider").offset();
+					    var currentSize = [$( "#imgEnlarge").width(),$( "#imgEnlarge").height()];
+						 if(currentSize[0]!=iniSize[0]  ||  currentSize[1]!=iniSize[1])
+						 {
+						       var left,top;
+						       if(e.pageX<offset.left)
+							         left = 0;
+							   else if(e.pageX>offset.left+iniSize[0]) 
+							         left = "-"+(currentSize[0]-iniSize[0]);
+							   else
+							   	     left ="-"+((currentSize[0]-iniSize[0]) * (e.pageX-offset.left)/iniSize[0] );
+
+							   if(e.pageY<offset.top)
+							         top = 0;
+							   else if(e.pageY>offset.top+iniSize[1]) 
+							         top = "-"+(currentSize[1]-iniSize[1]);
+							   else
+                                     top = "-"+((currentSize[1]-iniSize[1]) * (e.pageY-offset.top)/iniSize[1] );
+                               /*dateDelay = (new Date()).getTime()
+							   setTimeout(function(){
+							      if((new Date()).getTime()-dateDelay<300)
+								  {
+								    $( "#imgEnlarge").css({left:left+"px",top:top+"px"});
+								  }else
+								  {
+								    $( "#imgEnlarge").animate({left:left+"px",top:top+"px"});
+								  }
+							      
+							   },300);*/
+							   $( "#imgEnlarge").css({left:left+"px",top:top+"px"});
+						}
+		        });
+                 $(".photo_slider").click(function(e){
+				     var currentSize = [$( "#imgEnlarge").width(),$( "#imgEnlarge").height()];
+					 var css;
+					 if(currentSize[0]==iniSize[0] && currentSize[1]==iniSize[1])
+					 {
+					      var offset = $(".photo_slider").offset();
+						  var left = theImage.width *((e.pageX-offset.left)/iniSize[0]);
+						  var top = theImage.height *((e.pageY-offset.top)/iniSize[1]);
+						  css = {
+									 left:"-"+left+"px",
+									 top:"-"+top+"px",
+									 width:theImage.width+"px",
+									 height:theImage.height+"px"
+								};
+					 }else
+					 {
+					     css = {
+									 left:0,
+									 top:0,
+									 width:iniSize[0]+"px",
+									 height:iniSize[1]+"px"
+							   };
+					 }
+                     $( "#imgEnlarge").animate(css);
+				    
+				 });
+    	});
+	//-->
+	</script>
+	</body>
+</html>
